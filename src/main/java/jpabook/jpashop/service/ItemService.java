@@ -19,6 +19,16 @@ public class ItemService {
         itemRepository.save(item);
     }
 
+    @Transactional
+    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+        Item findItem = itemRepository.findOne(itemId); //같은 엔티티를 조회한다.
+        //데이터를 수정한다.
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);
+
+    }
+
     public List<Item> findItems(){
         return itemRepository.findAll();
     }
