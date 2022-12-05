@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
-@RequiredArgsConstructor
+@RestController //controller, responseBody
+@RequiredArgsConstructor //constructor
 public class MemberApiController {
     private final MemberService memberService;
 
